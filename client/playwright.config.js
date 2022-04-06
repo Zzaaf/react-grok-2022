@@ -21,7 +21,7 @@ const config = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 10000
+    timeout: 30000
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -65,6 +65,7 @@ const config = {
   webServer: {
     command: 'npm run start',
     port: 3000,
+    timeout: 60 * 1000
   },
 };
 

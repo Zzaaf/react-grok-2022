@@ -1,0 +1,13 @@
+.box {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.unactive {
+  background-color: gray;
+}
+
+.active {
+  background-color: red;
+}

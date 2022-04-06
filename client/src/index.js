@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/puzzles/App/App';
+import { createRoot } from 'react-dom/client';
+import App from './components/puzzles/App/App.jsx';
 
-ReactDOM.render(
-  <React.StrictMode>
+function Root() {
+  return <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  </React.StrictMode>;
+}
+
+const root = createRoot(document.getElementById('root'));
+root.render(<Root />);
