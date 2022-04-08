@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import style from './Puzzle110.module.css'
 
-function Puzzle110(props) {
+function Puzzle110() {
+
+  const [css, setCss] = useState(false)
+
   return (
-    <div>
-      
+    <div className={`circle ${css ? style.active : style.unactive}`} onClick={() => setCss(prevState => !prevState)}>
+
     </div>
   );
 }

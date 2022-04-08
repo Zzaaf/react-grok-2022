@@ -1,0 +1,13 @@
+.circle {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.unactive {
+  background-color: yellow;
+}
+
+.active {
+  background-color: green;
+}
