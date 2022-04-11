@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './components/puzzles/App/App.jsx';
+import App from './components/answers/App/App.jsx';
 
 function Root() {
   return <React.StrictMode>
