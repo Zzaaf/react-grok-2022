@@ -8,11 +8,9 @@ function Puzzle105() {
 
   const [style, setStyle] = useState(false)
 
-  console.log(style);
-
   return (
     <>
-      <div className={style ? 'box active' : 'box unactive'}></div>
+      <div className={style ? 'box box-active' : 'box box-unactive'}></div>
       <button className='btn' onClick={() => setStyle(true)}>Change color</button>
     </>
   );

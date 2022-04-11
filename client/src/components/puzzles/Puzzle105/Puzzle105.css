@@ -1,13 +1,12 @@
 .box {
   width: 5rem;
   height: 5rem;
-  cursor: pointer;
 }
 
-.unactive {
+.box-unactive {
   background-color: gray;
 }
 
-.active {
+.box-active {
   background-color: red;
 }
