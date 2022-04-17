@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Puzzle100 from "../Puzzle100/Puzzle100";
 import Puzzle105 from "../Puzzle105/Puzzle105";
