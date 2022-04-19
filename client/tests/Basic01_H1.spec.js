@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Puzzle100', async ({ page }) => {
+test('Basic01_H1', async ({ page }) => {
   await page.goto('http://localhost:3000/basic01');
 
   const header = page.locator('#root .header');
