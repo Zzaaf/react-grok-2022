@@ -36,7 +36,7 @@ function App() {
         <Route path="/useState03" element={<UseState03_Slider />} />
         <Route path="/useState04" element={<UseState04_Props />} />
         <Route path="/useState05" element={<UseState05_Modal />} />
-        <Route path="/usereducer01" element={<UseReducer01_Cards />} />
+        <Route path="/useReducer01" element={<UseReducer01_Cards />} />
       </Routes>
     </BrowserRouter>
   );
