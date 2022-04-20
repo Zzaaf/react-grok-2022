@@ -14,6 +14,9 @@ const reducer = (state, action) => {
         state.background === 'bg-secondary' ? 'bg-success' :
           'bg-primary'
     };
+
+    default:
+      throw new Error('unexpected action type');
   }
 };
 
@@ -33,18 +36,28 @@ function UseReducer01_Cards() {
 
   return <div>
     {card === 0 &&
-<Card backgroundClass={background} info={{ name: 'ok', dateBirth: 'my' }} />}
+      <Card backgroundClass={background} info={{ name: 'John Doe' }} />}
     {card === 1 &&
-<Card backgroundClass={background} info={{ name: 'JIJ', dateBirth: 'my' }} />}
+      <Card backgroundClass={background} info={{ name: 'Homer Simpson' }} />}
     {card === 2 &&
-<Card backgroundClass={background} info={{ name: 'KOH', dateBirth: 'my' }} />}
+      <Card backgroundClass={background} info={{ name: 'Piter Parker' }} />}
     <br />
     <div>
-      <button type="button" className="btn btn-primary" onClick={nextCard}>
+      <button
+        type="button"
+        className="btn btn-primary"
+        id="next-card"
+        onClick={nextCard}
+      >
         Next card
       </button>
       &nbsp;&nbsp;
-      <button type="button" className="btn btn-primary" onClick={nextBackground}>
+      <button
+        type="button"
+        className="btn btn-primary"
+        id="next-bg"
+        onClick={nextBackground}
+      >
         Next background
       </button>
     </div>

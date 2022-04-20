@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Basic01_H1 from '../Basic01_H1/Basic01_H1'
+import UseReducer01_Cards from '../UseReducer01_Cards/UseReducer01_Cards';
 import UseState01_ChangeColor from '../UseState01_ChangeColor/UseState01_ChangeColor'
 import UseState02_Toggle from '../UseState02_Toggle/UseState02_Toggle'
 import UseState03_Slider from '../UseState03_Slider/UseState03_Slider'
@@ -17,6 +18,7 @@ function App() {
         <Route path="/useState03" element={<UseState03_Slider />} />
         <Route path="/useState04" element={<UseState04_Props />} />
         <Route path="/useState05" element={<UseState05_Modal />} />
+        <Route path="/usereducer01" element={<UseReducer01_Cards />} />
       </Routes>
     </BrowserRouter>
   );

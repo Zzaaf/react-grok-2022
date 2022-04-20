@@ -1,17 +1,37 @@
 import { test, expect } from '@playwright/test';
 
-test('UseReducer01_Cards', async ({ page }) => {
-  await page.goto('http://localhost:3000/usereducer01');
+test.describe('UseReducer01_Cards', () => {
+  test('Code', () => {
+    
+  });
+  
+  test('Component', async ({ page }) => {
+    await page.goto(`http://localhost:3000/usereducer01`);
 
-  const input = page.locator('#root .range');
-  const label = page.locator('#root .label')
+    const card = page.locator('#root .card');
+    const cardTitle = page.locator('#root .card-title');
+    const nextCard = page.locator('#next-card');
+    const nextBg = page.locator('#next-bg');
 
-  await page.keyboard.press('Tab');
+    await expect(card).toHaveClass(/bg-primary/);
+    await expect(cardTitle).toHaveText('Name: John Doe');
 
-  for (let i = 0; i < 8; i += 1) {
-    await page.keyboard.press('ArrowRight');
-  }
+    await nextCard.click();
+    await expect(cardTitle).toHaveText('Name: Homer Simpson');
 
-  await expect(input).toHaveAttribute('type', 'range');
-  await expect(label).toHaveText('Months: 108');
+    await nextBg.click();
+    await expect(card).toHaveClass(/bg-secondary/);
+
+    await nextBg.click();
+    await expect(card).toHaveClass(/bg-success/);
+
+    await nextBg.click();
+    await expect(card).toHaveClass(/bg-primary/);
+
+    await nextCard.click();
+    await expect(cardTitle).toHaveText('Name: Piter Parker');
+
+    await nextCard.click();
+    await expect(cardTitle).toHaveText('Name: John Doe');
+  });
 });
