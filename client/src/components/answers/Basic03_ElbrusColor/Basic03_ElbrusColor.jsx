@@ -2,8 +2,8 @@ import React from 'react';
 
 function Basic03_ElbrusColor() {
   return (
-    <div>
-      
+    <div style={{ backgroundColor: '#4520ab', color: '#ffbc5b' }}>
+      <h1>It always seems impossible until it's done</h1>
     </div>
   );
 }

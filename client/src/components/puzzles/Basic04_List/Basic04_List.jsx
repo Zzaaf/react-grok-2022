@@ -1,10 +1,12 @@
+// описание задачи
+
 import React from 'react';
 
-function Basic04_List(props) {
+function Basic04_List() {
   return (
-    <div>
+    <>
       
-    </div>
+    </>
   );
 }
 

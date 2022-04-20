@@ -1,10 +1,12 @@
+// описание задачи
+
 import React from 'react';
 
-function Basic03_ElbrusColor(props) {
+function Basic03_ElbrusColor() {
   return (
-    <div>
+    <>
       
-    </div>
+    </>
   );
 }
 

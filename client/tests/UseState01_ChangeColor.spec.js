@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Puzzle105', async ({ page }) => {
+test('UseState01_ChangeColor', async ({ page }) => {
   await page.goto('http://localhost:3000/useState01');
 
   const div = page.locator('#root .box');
