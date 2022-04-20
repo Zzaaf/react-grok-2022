@@ -13,23 +13,28 @@ test.describe('UseReducer01_Cards', () => {
     const code = await fs.readFile(path.join(__dirname, `../src/components/${testSet}/UseReducer01_Cards/UseReducer01_Cards.jsx`), 'utf-8');
 
     // Используется useReducer, а не useState
-    expect(code).toContain('useReducer');
     expect(code).not.toContain('useState');
+    
+    // Используется только один useReducer
+    expect(code.match(/useReducer\(/g).length).toBe(1);
+    
+    // Используйются типы экшенов NEXT_CARD и NEXT_BACKGROUND
+    expect(code).toContain('NEXT_CARD');
+    expect(code).toContain('NEXT_BACKGROUND');
   });
 
   test('Component', async ({ page }) => {
     await page.goto(`http://localhost:3000/usereducer01`);
 
     const card = page.locator('#root .card');
-    const cardTitle = page.locator('#root .card-title');
     const nextCard = page.locator('#next-card');
     const nextBg = page.locator('#next-bg');
 
     await expect(card).toHaveClass(/bg-primary/);
-    await expect(cardTitle).toHaveText('Name: John Doe');
+    await expect(card).toHaveText(/John Doe/);
 
     await nextCard.click();
-    await expect(cardTitle).toHaveText('Name: Homer Simpson');
+    await expect(card).toHaveText(/Homer Simpson/);
 
     await nextBg.click();
     await expect(card).toHaveClass(/bg-secondary/);
@@ -41,9 +46,9 @@ test.describe('UseReducer01_Cards', () => {
     await expect(card).toHaveClass(/bg-primary/);
 
     await nextCard.click();
-    await expect(cardTitle).toHaveText('Name: Piter Parker');
+    await expect(card).toHaveText(/Piter Parker/);
 
     await nextCard.click();
-    await expect(cardTitle).toHaveText('Name: John Doe');
+    await expect(card).toHaveText(/John Doe/);
   });
 });
