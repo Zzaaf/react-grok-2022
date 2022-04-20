@@ -18,6 +18,9 @@ import UseState03_Slider from '../UseState03_Slider/UseState03_Slider';
 import UseState04_Props from '../UseState04_Props/UseState04_Props';
 import UseState05_Modal from '../UseState05_Modal/UseState05_Modal';
 
+// useReducer
+import UseReducer01_Cards from '../UseReducer01_Cards/UseReducer01_Cards'
+
 function App() {
   return (
     <BrowserRouter>
@@ -33,6 +36,7 @@ function App() {
         <Route path="/useState03" element={<UseState03_Slider />} />
         <Route path="/useState04" element={<UseState04_Props />} />
         <Route path="/useState05" element={<UseState05_Modal />} />
+        <Route path="/useReducer01" element={<UseReducer01_Cards />} />
       </Routes>
     </BrowserRouter>
   );

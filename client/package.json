@@ -13,7 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "npx playwright test && npx playwright show-report",
+    "test": "playwright test && playwright show-report",
+    "test-only": "playwright test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
