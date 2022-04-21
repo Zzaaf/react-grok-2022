@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function UseState05_Modal(props) {
+function UseState05_Modal() {
   return (
     <>
 
