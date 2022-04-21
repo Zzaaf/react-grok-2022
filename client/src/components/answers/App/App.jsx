@@ -19,7 +19,7 @@ import UseState04_Props from '../UseState04_Props/UseState04_Props';
 import UseState05_Modal from '../UseState05_Modal/UseState05_Modal';
 
 // useReducer
-import UseReducer01_Cards from '../UseReducer01_Cards/UseReducer01_Cards'
+import UseReducer01_Cards from '../UseReducer01_Cards/UseReducer01_Cards';
 
 function App() {
   return (
