@@ -5,7 +5,6 @@ test('UseState05_Modal', async ({ page }) => {
 
 
   const openBtn = page.locator('#root .btn-success')
-  const closeBtn = page.locator('#root .btn-close')
   const modal = page.locator('#root .modal');
 
   await expect(openBtn).toHaveText('Open Modal');

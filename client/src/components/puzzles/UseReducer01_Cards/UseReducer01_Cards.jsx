@@ -5,11 +5,19 @@
 // Также на странице должны быть две кнопки "Next card" (с id "next-card") и "Next background" (с id "next-bg")
 // При клике на кнопку Next card текущая карточка скрывается и отображается следующая ("Homer Simpson", затем "Piter Parker", а при следующем клике опять "John Doe")
 // При клике на кнопку Next background карточка меняет фон на серый (класс bg-secondary), затем на зелёный (класс bg-success), а при следующем клике опять на синий (класс bg-primary)
-// Не используй useState, вместо этого используй один useReducer
-// Начальное состояние редьюсера задай как { card: 0, background: 'bg-primary' }
+// Не используй хук useState, вместо этого используй один useReducer
+// Начальное состояние редьюсера задай как: { card: 0, background: 'bg-primary' }
 // Используй экшены двух типов: NEXT_CARD и NEXT_BACKGROUND
-// Mockup смотри в файле ./Mockup.png
+// Mockup смотри в файле: ./Mockup.png
 
-export default function UseReducer01_Cards() {
+import React from 'react';
 
+function UseReducer01_Cards(props) {
+  return (
+    <>
+      
+    </>
+  );
 }
+
+export default UseReducer01_Cards;

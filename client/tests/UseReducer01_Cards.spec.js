@@ -5,6 +5,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 dotenv.config();
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const testSet = process.env.REACT_APP_TEST_SET ?? 'puzzles';
 
@@ -14,10 +15,10 @@ test.describe('UseReducer01_Cards', () => {
 
     // Используется useReducer, а не useState
     expect(code).not.toContain('useState');
-    
+
     // Используется только один useReducer
     expect(code.match(/useReducer\(/g).length).toBe(1);
-    
+
     // Используйются типы экшенов NEXT_CARD и NEXT_BACKGROUND
     expect(code).toContain('NEXT_CARD');
     expect(code).toContain('NEXT_BACKGROUND');

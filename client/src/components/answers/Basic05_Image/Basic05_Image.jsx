@@ -4,7 +4,7 @@ import './Basic05_Image.css';
 
 function Basic05_Image() {
   return (
-    <section className='wrap'>
+    <section className='wrap-image'>
       <img src={logo} className="logo" />
     </section>
   );
