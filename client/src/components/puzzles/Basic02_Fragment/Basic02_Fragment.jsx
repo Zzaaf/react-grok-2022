@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-function Basic02_Fragment(props) {
+function Basic02_Fragment() {
   return (
     <>
       

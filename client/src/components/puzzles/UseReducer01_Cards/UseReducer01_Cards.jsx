@@ -12,7 +12,7 @@
 
 import React from 'react';
 
-function UseReducer01_Cards(props) {
+function UseReducer01_Cards() {
   return (
     <>
       
