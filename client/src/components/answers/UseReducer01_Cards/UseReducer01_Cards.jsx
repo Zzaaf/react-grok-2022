@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useCallback } from "react";
 import Card from "./Card";
 
 const reducer = (state, action) => {
@@ -26,13 +26,10 @@ const initialState = {
 };
 
 function UseReducer01_Cards() {
-  const [
-    { card, background },
-    dispatch
-  ] = useReducer(reducer, initialState);
+  const [{ card, background }, dispatch] = useReducer(reducer, initialState);
 
-  const nextCard = React.useCallback(() => dispatch({ type: 'NEXT_CARD' }));
-  const nextBackground = React.useCallback(() => dispatch({ type: 'NEXT_BACKGROUND' }));
+  const nextCard = useCallback(() => dispatch({ type: 'NEXT_CARD' }));
+  const nextBackground = useCallback(() => dispatch({ type: 'NEXT_BACKGROUND' }));
 
   return (
     <div>
