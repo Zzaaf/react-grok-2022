@@ -4,7 +4,7 @@ test('UseState03_Slider', async ({ page }) => {
   await page.goto('http://localhost:3000/useState03');
 
   const input = page.locator('#root .range');
-  const label = page.locator('#root .label')
+  const label = page.locator('#root .label');
 
   await page.keyboard.press('Tab');
 

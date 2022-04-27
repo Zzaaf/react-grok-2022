@@ -9,7 +9,7 @@ router.route('/')
   })
   .post((req, res) => {
     City.create(req.body)
-      .then((newDog) => res.status(201).json(newDog))
+      .then((newCity) => res.status(201).json(newCity))
       .catch((error) => res.status(500).json(error));
   });
 
