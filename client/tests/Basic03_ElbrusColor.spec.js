@@ -12,4 +12,6 @@ test('Basic03_ElbrusColor', async ({ page }) => {
   await expect(section).toHaveCSS('background-color', 'rgb(69, 32, 171)');
   await expect(section).toHaveCSS('color', 'rgb(255, 188, 91)');
   await expect(h1).toHaveText('It always seems impossible until it\'s done');
+  
+  await expect(section).not.toHaveAttribute('style', /color/);
 });
