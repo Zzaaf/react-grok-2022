@@ -5,7 +5,7 @@ module.exports = {
         title: 'Moskow',
         founded: 1147,
         area: 2562,
-        official_language: 'russian',
+        officialLanguage: 'russian',
         population: 12635466,
         description: '',
         createdAt: new Date(),

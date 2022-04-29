@@ -16,7 +16,7 @@ module.exports = {
       area: {
         type: Sequelize.INTEGER,
       },
-      official_language: {
+      officialLanguage: {
         type: Sequelize.STRING,
       },
       population: {

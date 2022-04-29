@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     area: {
       type: DataTypes.INTEGER,
     },
-    official_language: {
+    officialLanguage: {
       type: DataTypes.STRING,
     },
     population: {

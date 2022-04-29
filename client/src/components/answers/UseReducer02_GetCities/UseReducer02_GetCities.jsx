@@ -32,7 +32,7 @@ function UseReducer02_GetCities() {
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col bi bi-caret-down-fill">Title</th>
+          <th scope="col">Title</th>
           <th scope="col">Founded</th>
           <th scope="col">Area</th>
           <th scope="col">Official Language</th>
