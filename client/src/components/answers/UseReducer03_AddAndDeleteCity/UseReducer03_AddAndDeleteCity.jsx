@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import Row from './Row';
 import AddCityForm from './AddCityForm';
+import Modal from './Modal';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -19,13 +20,24 @@ const reducer = (state, action) => {
       cities: state.cities.filter(city => city.id !== Number(action.payload)),
     };
 
+    case 'SHOW_MODAL': return {
+      ...state,
+      modal: true
+    }
+
+    case 'HIDE_MODAL': return {
+      ...state,
+      modal: false
+    }
+
     default:
       throw new Error('unexpected action type');
   }
 };
 
 const initialState = {
-  cities: []
+  cities: [],
+  modal: false
 };
 
 function UseReducer03_AddAndDeleteCity() {
@@ -43,7 +55,7 @@ function UseReducer03_AddAndDeleteCity() {
       <table className="table table-striped" >
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">Founded</th>
             <th scope="col">Area</th>
@@ -54,7 +66,7 @@ function UseReducer03_AddAndDeleteCity() {
           </tr>
         </thead>
         <tbody>
-          {state.cities.length ? state.cities.map(city => <Row key={city.id} city={city} dispatch={dispatch} />) :
+          {state.cities.length ? state.cities.map(city => <Row key={city.id} city={city} dispatch={dispatch} state={state} />) :
             <tr>
               <th scope="col">No data</th>
             </tr>
@@ -63,6 +75,9 @@ function UseReducer03_AddAndDeleteCity() {
       </table >
 
       <AddCityForm dispatch={dispatch} />
+
+      {state.modal && <Modal />}
+
     </section>
   );
 }

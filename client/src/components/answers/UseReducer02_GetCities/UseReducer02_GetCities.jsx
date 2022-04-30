@@ -28,26 +28,28 @@ function UseReducer02_GetCities() {
   }, [])
 
   return (
-    <table className="table table-striped" >
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Founded</th>
-          <th scope="col">Area</th>
-          <th scope="col">Official Language</th>
-          <th scope="col">Population</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {state.cities.length ? state.cities.map(city => <Row key={city.id} city={city} />) :
+    <section className='container'>
+      <table className="table table-striped" >
+        <thead>
           <tr>
-            <th scope="col">No data</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Founded</th>
+            <th scope="col">Area</th>
+            <th scope="col">Official Language</th>
+            <th scope="col">Population</th>
+            <th scope="col">Description</th>
           </tr>
-        }
-      </tbody>
-    </table >
+        </thead>
+        <tbody>
+          {state.cities.length ? state.cities.map(city => <Row key={city.id} city={city} />) :
+            <tr>
+              <th scope="col">No data</th>
+            </tr>
+          }
+        </tbody>
+      </table >
+    </section>
   );
 }
 
