@@ -13,7 +13,32 @@ router.route('/')
       .catch((error) => res.status(500).json(error));
   });
 
-router.route('/:id')
+router.route('/count')
+  .post(async (req, res) => {
+    console.log(req.body);
+
+    const { limit } = req.body;
+    const { count } = await City.findAndCountAll();
+    const countPages = Math.ceil(count / limit);
+    const arrPages = [];
+
+    for (let index = 1; index <= countPages; index += 1) {
+      arrPages.push(index);
+    }
+
+    res.json(arrPages);
+  });
+
+router.route('/:page')
+  .get(async (req, res) => {
+    const { page } = req.params;
+    const { limit } = req.query;
+    const skipValue = Number(page) === 1 ? 0 : (limit * page) - limit;
+
+    City.findAll({ offset: Number(skipValue), limit })
+      .then((partResources) => res.json(partResources))
+      .catch((error) => res.status(500).json(error));
+  })
   .put((req, res) => {
     const { id } = req.params;
 
