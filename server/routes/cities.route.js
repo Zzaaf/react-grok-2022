@@ -36,7 +36,9 @@ router.route('/:page')
     City.findAll({ offset: Number(skipValue), limit })
       .then((partResources) => res.json(partResources))
       .catch((error) => res.status(500).json(error));
-  })
+  });
+
+router.route('/:id')
   .put((req, res) => {
     const { id } = req.params;
 

@@ -12,7 +12,7 @@ function Row({ city, dispatch }) {
       <td>{city.officialLanguage}</td>
       <td>{city.population}</td>
       <td>{city.description}</td>
-      <td><i className="bi bi-x-lg" role="button" onClick={() => dispatch({ type: 'SHOW_MODAL' })}></i></td>
+      <td><i className="bi bi-x-lg" role="button" onClick={() => dispatch({ type: 'SHOW_MODAL', payload: city.id })}></i></td>
     </tr >
   );
 }

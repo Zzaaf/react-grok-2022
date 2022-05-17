@@ -22,12 +22,12 @@ const reducer = (state, action) => {
 
     case 'SHOW_MODAL': return {
       ...state,
-      modal: true
+      modal: { status: true, payload: action.payload }
     }
 
     case 'HIDE_MODAL': return {
       ...state,
-      modal: false
+      modal: { status: false, payload: null }
     }
 
     default:
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
 
 const initialState = {
   cities: [],
-  modal: false
+  modal: { status: false, payload: null }
 };
 
 function UseReducer03_AddAndDeleteCity() {
@@ -76,7 +76,7 @@ function UseReducer03_AddAndDeleteCity() {
 
       <AddCityForm dispatch={dispatch} />
 
-      {state.modal && <Modal dispatch={dispatch} />}
+      {state.modal.status && <Modal state={state} dispatch={dispatch} />}
 
     </section>
   );

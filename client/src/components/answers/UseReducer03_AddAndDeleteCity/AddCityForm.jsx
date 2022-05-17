@@ -26,7 +26,7 @@ function AddCityForm({ dispatch }) {
   }
 
   return (
-    <form onSubmit={addCity} className="row g-3">
+    <form onSubmit={addCity} className="row g-3 mb-5">
 
       <div className="col">
         <input type="text" name="title" required className="form-control" placeholder="Title" />
