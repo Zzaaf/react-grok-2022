@@ -91,14 +91,16 @@ function UseReducer05_Pagination() {
         </tbody>
       </table >
 
-      <nav>
-        <select onChange={setArrPages} className="form-select">
-          <option>8</option>
-          <option>24</option>
-        </select>
-      </nav>
+      <nav className='row'>
+        <Pagination state={state} />
 
-      <Pagination state={state} />
+        <section className='col-1 offset-1'>
+          <select onChange={setArrPages} className="form-select">
+            <option>8</option>
+            <option>24</option>
+          </select>
+        </section>
+      </nav>
     </section >
   );
 }

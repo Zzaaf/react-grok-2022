@@ -15,8 +15,6 @@ router.route('/')
 
 router.route('/count')
   .post(async (req, res) => {
-    console.log(req.body);
-
     const { limit } = req.body;
     const { count } = await City.findAndCountAll();
     const countPages = Math.ceil(count / limit);

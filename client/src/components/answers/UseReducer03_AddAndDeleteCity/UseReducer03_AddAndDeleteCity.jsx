@@ -76,7 +76,7 @@ function UseReducer03_AddAndDeleteCity() {
 
       <AddCityForm dispatch={dispatch} />
 
-      {state.modal && <Modal />}
+      {state.modal && <Modal dispatch={dispatch} />}
 
     </section>
   );
