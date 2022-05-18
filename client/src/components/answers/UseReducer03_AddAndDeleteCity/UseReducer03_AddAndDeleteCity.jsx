@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import Row from './Row';
 import AddCityForm from './AddCityForm';
-import Modal from './Modal';
+import DeleteCityModal from './DeleteCityModal';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -76,7 +76,7 @@ function UseReducer03_AddAndDeleteCity() {
 
       <AddCityForm dispatch={dispatch} />
 
-      {state.modal.status && <Modal state={state} dispatch={dispatch} />}
+      {state.modal.status && <DeleteCityModal state={state} dispatch={dispatch} />}
 
     </section>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal({ state, dispatch }) {
+function DeleteCityModal({ state, dispatch }) {
 
   const { payload } = state.modal;
 
@@ -37,4 +37,4 @@ function Modal({ state, dispatch }) {
   );
 }
 
-export default Modal;
+export default DeleteCityModal;
