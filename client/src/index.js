@@ -7,11 +7,13 @@ const AnswersApp = React.lazy(() => import('./components/answers/App/App.jsx'));
 const variation = process.env.REACT_APP_TEST_SET === 'answers' ? true : false;
 
 function Root() {
-  return <React.StrictMode>
-    <Suspense>
-      {variation ? <AnswersApp /> : <PuzzlesApp />}
-    </Suspense>
-  </React.StrictMode>;
+  return (
+    <React.StrictMode>
+      <Suspense>
+        {variation ? <AnswersApp /> : <PuzzlesApp />}
+      </Suspense>
+    </React.StrictMode>
+  )
 }
 
 const root = createRoot(document.getElementById('root'));

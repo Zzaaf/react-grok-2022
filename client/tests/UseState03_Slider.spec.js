@@ -6,7 +6,8 @@ test('UseState03_Slider', async ({ page }) => {
   const input = page.locator('#root .range');
   const label = page.locator('#root .label');
 
-  await page.keyboard.press('Tab');
+  await page.keyboard.press('Tab', { delay: 500 });
+  await page.keyboard.press('Tab', { delay: 500 });
 
   for (let i = 0; i < 8; i += 1) {
     await page.keyboard.press('ArrowRight');

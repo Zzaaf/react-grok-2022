@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // home
 import Home from '../Home/Home';
 
 // basic
-import Basic01_H1 from '../Basic01_H1/Basic01_H1'
+import Basic01_H1 from '../Basic01_H1/Basic01_H1';
 import Basic02_Fragment from '../Basic02_Fragment/Basic02_Fragment';
 import Basic03_ElbrusColor from '../Basic03_ElbrusColor/Basic03_ElbrusColor';
 import Basic04_List from '../Basic04_List/Basic04_List';

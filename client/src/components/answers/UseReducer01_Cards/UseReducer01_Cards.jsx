@@ -1,5 +1,6 @@
 import React, { useReducer, useCallback } from "react";
 import Card from "./Card";
+import style from './style.module.css'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -32,34 +33,20 @@ function UseReducer01_Cards() {
   const nextBackground = useCallback(() => dispatch({ type: 'NEXT_BACKGROUND' }));
 
   return (
-    <div>
+    <section className={style.wrap}>
       {card === 0 &&
         <Card backgroundClass={background} info={{ name: 'John Doe' }} />}
       {card === 1 &&
         <Card backgroundClass={background} info={{ name: 'Homer Simpson' }} />}
       {card === 2 &&
         <Card backgroundClass={background} info={{ name: 'Piter Parker' }} />}
-      <br />
-      <div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          id="next-card"
-          onClick={nextCard}
-        >
-          Next card
-        </button>
-        &nbsp;&nbsp;
-        <button
-          type="button"
-          className="btn btn-primary"
-          id="next-bg"
-          onClick={nextBackground}
-        >
-          Next background
-        </button>
+
+      <div className="flex-column justify-content-between">
+        <button type="button" className="btn btn-outline-primary m-2" id="next-card" onClick={nextCard}>Next card</button>
+        <button type="button" className="btn btn-outline-primary m-2" id="next-bg" onClick={nextBackground}>Next background</button>
       </div>
-    </div>
+
+    </section>
   )
 }
 
