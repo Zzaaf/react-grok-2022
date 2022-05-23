@@ -27,27 +27,31 @@ router.route('/count')
     res.json(arrPages);
   });
 
-router.route('/:page')
-  .get(async (req, res) => {
-    const { page } = req.params;
-    const { limit } = req.query;
-    const skipValue = Number(page) === 1 ? 0 : (limit * page) - limit;
+// router.route('/:page')
+//   .get(async (req, res) => {
+//     const { page } = req.params;
+//     const { limit } = req.query;
+//     const skipValue = Number(page) === 1 ? 0 : (limit * page) - limit;
 
-    City.findAll({ offset: Number(skipValue), limit })
-      .then((partResources) => res.json(partResources))
-      .catch((error) => res.status(500).json(error));
-  });
+//     City.findAll({ offset: Number(skipValue), limit })
+//       .then((partResources) => res.json(partResources))
+//       .catch((error) => res.status(500).json(error));
+//   });
 
 router.route('/:id')
   .put((req, res) => {
     const { id } = req.params;
 
     City.update(req.body, { where: { id }, returning: true })
-      .then((updatedCity) => res.json(updatedCity))
+      .then((updatedData) => {
+        const [updatedCity] = updatedData[1];
+        res.json(updatedCity);
+      })
       .catch((error) => res.status(500).json(error));
   })
   .delete((req, res) => {
     const { id } = req.params;
+
     City.destroy({ where: { id } })
       .then((deletedCity) => (deletedCity ? res.json(id) : res.status(404).json(deletedCity)))
       .catch((error) => res.status(500).json(error));

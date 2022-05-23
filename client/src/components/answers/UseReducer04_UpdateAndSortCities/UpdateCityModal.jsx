@@ -19,15 +19,16 @@ function UpdateCityModal({ state, dispatch }) {
       description: description.value
     }
 
-    console.log(updatedCity);
-
     fetch(`${process.env.REACT_APP_URL}/cities/${cityId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify(updatedCity)
     })
       .then(res => res.json())
-      .then(payload => dispatch({ type: 'UPDATE_CITY', payload }))
+      .then(payload => {
+        dispatch({ type: 'UPDATE_CITY', payload })
+        dispatch({ type: 'HIDE_UPDATE_MODAL' })
+      })
   }
 
   return (

@@ -70,7 +70,7 @@ function UseReducer04_UpdateAndSortCities() {
     fetch(`${process.env.REACT_APP_URL}/cities`)
       .then(response => response.json())
       .then(data => dispatch({ type: 'GET_CITIES', payload: data }))
-  }, [])
+  }, [dispatch])
 
   return (
     <section className='container'>
