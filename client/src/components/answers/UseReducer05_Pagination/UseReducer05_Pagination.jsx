@@ -55,7 +55,7 @@ function UseReducer05_Pagination() {
     }).then(res => res.json())
       .then(arrPages => { dispatch({ type: "INIT_PAGES", payload: arrPages }) })
 
-    fetch(`${process.env.REACT_APP_URL}/cities/1?limit=${state.limit}`)
+    fetch(`${process.env.REACT_APP_URL}/pages/1?limit=${state.limit}`)
       .then(response => response.json())
       .then(data => {
         dispatch({ type: 'GET_CITIES', payload: data })
@@ -66,7 +66,7 @@ function UseReducer05_Pagination() {
     <section className='container'>
 
       <Routes>
-        <Route path='/cities/:page' element={<Page state={state} dispatch={dispatch} />} />
+        <Route path='/pages/:page' element={<Page state={state} dispatch={dispatch} />} />
       </Routes>
 
       <table className="table table-striped" >

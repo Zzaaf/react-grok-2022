@@ -27,17 +27,6 @@ router.route('/count')
     res.json(arrPages);
   });
 
-// router.route('/:page')
-//   .get(async (req, res) => {
-//     const { page } = req.params;
-//     const { limit } = req.query;
-//     const skipValue = Number(page) === 1 ? 0 : (limit * page) - limit;
-
-//     City.findAll({ offset: Number(skipValue), limit })
-//       .then((partResources) => res.json(partResources))
-//       .catch((error) => res.status(500).json(error));
-//   });
-
 router.route('/:id')
   .put((req, res) => {
     const { id } = req.params;

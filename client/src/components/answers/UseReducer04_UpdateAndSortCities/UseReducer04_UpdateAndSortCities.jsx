@@ -51,6 +51,15 @@ const reducer = (state, action) => {
       updateModal: { status: false, payload: null }
     }
 
+    case 'SORT_AREA': return {
+      ...state,
+      cities: [...state.cities].sort(action.payload ?
+        ((a, b) => a['area'] < b['area'] ? 1 : -1)
+        :
+        ((a, b) => a['area'] > b['area'] ? 1 : -1)),
+      sortingByArea: { status: action.payload }
+    }
+
     default:
       throw new Error('unexpected action type');
   }
@@ -59,7 +68,8 @@ const reducer = (state, action) => {
 const initialState = {
   cities: [],
   updateModal: { status: false, payload: null },
-  deleteModal: { status: false, payload: null }
+  deleteModal: { status: false, payload: null },
+  sortingByArea: { status: false, type: null }
 };
 
 function UseReducer04_UpdateAndSortCities() {
@@ -80,7 +90,10 @@ function UseReducer04_UpdateAndSortCities() {
             <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">Founded</th>
-            <th scope="col">Area</th>
+            <th scope="col">
+              Area
+              <i className={`bi ${state.sortingByArea.status ? 'bi-caret-down-fill' : 'bi-caret-up-fill'}`} role="button" onClick={() => dispatch({ type: 'SORT_AREA', payload: !state.sortingByArea.status })} ></i>
+            </th>
             <th scope="col">Official Language</th>
             <th scope="col">Population</th>
             <th scope="col">Description</th>
