@@ -51,13 +51,23 @@ const reducer = (state, action) => {
       updateModal: { status: false, payload: null }
     }
 
-    case 'SORT_AREA': return {
-      ...state,
-      cities: [...state.cities].sort(action.payload ?
-        ((a, b) => a['area'] < b['area'] ? 1 : -1)
-        :
-        ((a, b) => a['area'] > b['area'] ? 1 : -1)),
-      sortingByArea: { status: action.payload }
+    case 'TOGGLE_SORT_AREA': {
+      const direction = state.sortingByArea.direction === 'DESC' ? 'ASC' : 'DESC'
+
+      return {
+        ...state,
+        cities: [...state.cities].sort((a, b) => {
+          switch (direction) {
+            case 'ASC':
+              return a['area'] - b['area']
+            case 'DESC':
+              return b['area'] - a['area']
+            default:
+              return 0;
+          }
+        }),
+        sortingByArea: { direction }
+      }
     }
 
     default:
@@ -69,7 +79,7 @@ const initialState = {
   cities: [],
   updateModal: { status: false, payload: null },
   deleteModal: { status: false, payload: null },
-  sortingByArea: { status: false, type: null }
+  sortingByArea: { direction: null }
 };
 
 function UseReducer04_UpdateAndSortCities() {
@@ -92,7 +102,7 @@ function UseReducer04_UpdateAndSortCities() {
             <th scope="col">Founded</th>
             <th scope="col">
               Area
-              <i className={`bi ${state.sortingByArea.status ? 'bi-caret-down-fill' : 'bi-caret-up-fill'}`} role="button" onClick={() => dispatch({ type: 'SORT_AREA', payload: !state.sortingByArea.status })} ></i>
+              <i className={`bi ${state.sortingByArea.direction === 'DESC' ? 'bi-caret-down-fill' : 'bi-caret-up-fill'}`} role="button" onClick={() => dispatch({ type: 'TOGGLE_SORT_AREA' })} ></i>
             </th>
             <th scope="col">Official Language</th>
             <th scope="col">Population</th>
