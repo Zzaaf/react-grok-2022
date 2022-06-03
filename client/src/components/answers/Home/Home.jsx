@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import style from './Home.module.css'
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
 
   return (
     <ul className={style.list}>
-      {themes.map(theme => <li className={style.card}>{theme}</li>)}
+      {themes.map((theme, index) => <Link to={theme.split('_')[0].toLowerCase()} key={index}><li className={style.card}>{theme}</li></Link>)}
     </ul>
   );
 }
