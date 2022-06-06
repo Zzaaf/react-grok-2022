@@ -11,6 +11,8 @@ const testSet = process.env.REACT_APP_TEST_SET ?? 'puzzles';
 
 test.describe('UseReducer01_Cards', () => {
   test('Code', async () => {
+    
+    // Получаем весь код из компонента 'UseReducer01_Cards'
     const code = await fs.readFile(path.join(__dirname, `../src/components/${testSet}/UseReducer01_Cards/UseReducer01_Cards.jsx`), 'utf-8');
 
     // Используется useReducer, а не useState

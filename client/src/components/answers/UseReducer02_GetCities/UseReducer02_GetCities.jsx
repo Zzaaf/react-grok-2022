@@ -32,13 +32,13 @@ function UseReducer02_GetCities() {
       <table className="table table-striped" >
         <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Founded</th>
-            <th scope="col">Area</th>
-            <th scope="col">Official Language</th>
-            <th scope="col">Population</th>
-            <th scope="col">Description</th>
+            <th className='table-header' scope="col">ID</th>
+            <th className='table-header' scope="col">Title</th>
+            <th className='table-header' scope="col">Founded</th>
+            <th className='table-header' scope="col">Area</th>
+            <th className='table-header' scope="col">Official Language</th>
+            <th className='table-header' scope="col">Population</th>
+            <th className='table-header' scope="col">Description</th>
           </tr>
         </thead>
         <tbody>
