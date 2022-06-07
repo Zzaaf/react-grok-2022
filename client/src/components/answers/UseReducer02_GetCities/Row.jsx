@@ -2,8 +2,8 @@ import React from 'react';
 
 function Row({ city }) {
   return (
-    <tr>
-      <th scope="row">{city.id}</th>
+    <tr className='table-row'>
+      <th>{city.id}</th>
       <td>{city.title}</td>
       <td>{city.founded}</td>
       <td>{city.area}</td>

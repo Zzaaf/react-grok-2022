@@ -39,8 +39,20 @@ test.describe('UseReducer02_GetCities', () => {
   test('Component', async ({ page }) => {
     await page.goto(`http://localhost:3000/usereducer02`);
 
-    const tr = page.locator('#root .table-header');
+    // Определяем заголовки в таблице
+    const th = page.locator('#root .table-header');
 
-    await expect(tr).toHaveCount(7);
+    // Определяем строки в таблице
+    const tr = page.locator('#root .table-row');
+
+    // Определяем количество заголовков в таблице
+    await expect(th).toHaveCount(7);
+
+    // Запрашиваем количество городов в БД
+    const response = await fetch(`${process.env.REACT_APP_URL}/cities`);
+    const citiesCount = await response.json();
+
+    // Сопоставляем количество городов и количество строк
+    await expect(tr).toHaveCount(citiesCount.length);
   });
 });

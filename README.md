@@ -18,3 +18,6 @@
 Для перехода в режим `answers` создай файл `.env` в папке `client` со значанием: `REACT_APP_TEST_SET = answers`. 
 Для работы с сервером и БД, в папке `server` создай файл `.env` со значением: `DATABASE_URL=postgres://postgres:postgres@localhost:5432/React-Grok-2022`
 10. В случае опечатки, ошибки или непонятного описания задачи, пожалуйста, сформируй [`Issue`](https://github.com/Elbrus-Bootcamp/react-grok-2022/issues) с предложением или исправлением, успехов!
+
+## Системные требования:
+- Node.js 18.0 и выше
