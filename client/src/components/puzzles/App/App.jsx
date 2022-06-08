@@ -17,6 +17,10 @@ import UseState05_Modal from '../UseState05_Modal/UseState05_Modal';
 
 // useReducer
 import UseReducer01_Cards from '../UseReducer01_Cards/UseReducer01_Cards';
+import UseReducer02_GetCities from '../UseReducer02_GetCities/UseReducer02_GetCities';
+import UseReducer03_AddAndDeleteCity from '../UseReducer03_AddAndDeleteCity/UseReducer03_AddAndDeleteCity';
+import UseReducer04_UpdateAndSortCities from '../UseReducer04_UpdateAndSortCities/UseReducer04_UpdateAndSortCities';
+import UseReducer05_Pagination from '../UseReducer05_Pagination/UseReducer05_Pagination';
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
         <Route path="/useState04" element={<UseState04_Props />} />
         <Route path="/useState05" element={<UseState05_Modal />} />
         <Route path="/useReducer01" element={<UseReducer01_Cards />} />
+        <Route path="/useReducer02" element={<UseReducer02_GetCities />} />
+        <Route path="/useReducer03" element={<UseReducer03_AddAndDeleteCity />} />
+        <Route path="/useReducer04" element={<UseReducer04_UpdateAndSortCities />} />
+        <Route path="/useReducer05/*" element={<UseReducer05_Pagination />} />
       </Routes>
     </BrowserRouter>
   );

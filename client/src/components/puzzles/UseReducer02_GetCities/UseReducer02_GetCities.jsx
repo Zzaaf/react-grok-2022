@@ -1,9 +1,9 @@
 import React from 'react';
 
-function UseReducer02_GetCities(props) {
+function UseReducer02_GetCities() {
   return (
     <div>
-      
+
     </div>
   );
 }

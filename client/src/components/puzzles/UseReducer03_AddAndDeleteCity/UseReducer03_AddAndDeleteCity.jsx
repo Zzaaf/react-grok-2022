@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UseReducer03_AddAndDeleteCity(props) {
+function UseReducer03_AddAndDeleteCity() {
   return (
     <div>
       

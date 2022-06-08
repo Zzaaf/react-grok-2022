@@ -1,9 +1,9 @@
 import React from 'react';
 
-function UseReducer04_UpdateAndSortCities(props) {
+function UseReducer04_UpdateAndSortCities() {
   return (
     <div>
-      
+
     </div>
   );
 }
