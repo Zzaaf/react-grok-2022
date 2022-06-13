@@ -4,7 +4,6 @@
   "description": "This tool can help you understand the basic concepts of `React` and solve the 'don't know where to start' problem.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd client && npm i && cd ../server npm i",
     "test": "cd client && npm test",
     "test-dev": "cd client && npm run test-dev",
     "test-only": "cd client && npm run test-only"
