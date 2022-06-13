@@ -6,6 +6,7 @@
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.3",
     "dotenv": "^16.0.0",
+    "node-fetch": "^3.2.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
@@ -16,8 +17,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "playwright test && playwright show-report",
+    "test-dev": "REACT_APP_TEST_SET=answers npm test",
     "test-only": "playwright test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "npx playwright install"
   },
   "eslintConfig": {
     "extends": "react-app"

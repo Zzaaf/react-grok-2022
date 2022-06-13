@@ -4,6 +4,7 @@ import fs from 'fs/promises';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { constants } from 'node:fs';
+import fetch from 'node-fetch';
 
 dotenv.config();
 
