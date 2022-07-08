@@ -1,6 +1,6 @@
 {
   "name": "react-grok-2022",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "This tool can help you understand the basic concepts of `React` and solve the 'don't know where to start' problem.",
   "main": "index.js",
   "scripts": {
